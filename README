@@ -1,57 +1,129 @@
-Overview
-========
+                                  fusedav 0.2
 
-fusedav is a Linux userspace file system driver for mounting WebDAV
-shares. It makes use of FUSE as userspace file system API and neon as
-WebDAV API.
+   Copyright 2004,2006 Lennart Poettering <mzshfrqni (at) 0pointer (dot)
+   de>
+     * [1]License
+     * [2]News
+     * [3]Overview
+     * [4]Current Status
+     * [5]Documentation
+     * [6]Requirements
+     * [7]Installation
+     * [8]Acknowledgements
+     * [9]Download
+
+License
+
+   This program is free software; you can redistribute it and/or modify it
+   under the terms of the GNU General Public License as published by the
+   Free Software Foundation; either version 2 of the License, or (at your
+   option) any later version.
+
+   This program is distributed in the hope that it will be useful, but
+   WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+   General Public License for more details.
+
+   You should have received a copy of the GNU General Public License along
+   with this program; if not, write to the Free Software Foundation, Inc.,
+   675 Mass Ave, Cambridge, MA 02139, USA.
+
+News
+
+   Sun Apr 2 2006:
+
+   [10]Version 0.2 released, changes include: update for current NEON
+   (0.26 required) and FUSE (2.5 required); locking support; proper
+   redirection support; export WebDAV properties as Linux EAs
+
+   Tue Mar 30 2004:
+
+   [11]Version 0.1 released, initial release
+
+Overview
+
+   fusedav is a Linux userspace file system driver for mounting [12]WebDAV
+   shares. It makes use of [13]FUSE as userspace file system API and
+   [14]neon as WebDAV API.
 
 Current Status
-==============
 
-Version 0.2 works fine.
+   Version 0.2 works fine.
 
 Documentation
-=============
 
-After installation just run fusedav with two arguments: the WevDAV URL
-and the local mount point:
+   After installation just run fusedav with two arguments: the WevDAV URL
+   and the local mount point:
+fusedav http://webdav.foo.bar/ /tmp/test
 
-  fusedav http://webdav.foo.bar/ /tmp/test
-
-You will be queried for a username and password if required. As long as
-the fusedav process is running, the file system is accessible under
-/tmp/test.
+   You will be queried for a username and password if required. As long as
+   the fusedav process is running, the file system is accessible under
+   /tmp/test.
 
 Requirements
-============
 
-fusedav was developed and tested on Debian GNU/Linux "testing" from
-April 2006, it should work on most other Linux distributions since it
-uses GNU autoconf for source code configuration.
+   fusedav was developed and tested on Debian GNU/Linux "testing" from
+   April 2006, it should work on most other Linux distributions since it
+   uses GNU autoconf for source code configuration.
 
-fusedav requires the neon (0.26 minimum - 0.25 does not suffice!) and
-FUSE (2.5 minimum) development library files for compilation.
+   fusedav requires the [15]neon (0.26 minimum - 0.25 does not suffice!)
+   built with thread-safe SSL and LFS support, and [16]FUSE (2.5 minimum)
+   development library files for compilation.
 
 Installation
-============
 
-As this package is made with the GNU autotools you should run
-./configure inside the distribution directory for configuring the source
-tree. After that you should run make for compilation and make install
-(as root) for installation of fusedav.
+   As this package is made with the GNU autotools you should run
+   ./configure inside the distribution directory for configuring the
+   source tree. After that you should run make for compilation and make
+   install (as root) for installation of fusedav.
 
 Acknowledgements
-================
 
-Milos Szeredi for developing FUSE and some useful hints for its usage
+   Milos Szeredi for developing FUSE and some useful hints for its usage
 
-Sebastien Estienne for some packaging work
+   Sebastien Estienne for some packaging work
 
 Download
-========
 
-The newest release is always available from
-http://0pointer.de/lennart/projects/fusedav/
+   The newest release is always available from
+   [17]http://0pointer.de/lennart/projects/fusedav/
 
-The current release is 0.2
+   The current release is [18]0.2
 
+   Get fusedav's development sources from the [19]Subversion
+   [20]repository ([21]viewcvs):
+svn checkout svn://svn.0pointer.net/fusedav/trunk fusedav
+
+   If you want to be notified whenever I release a new version of this
+   software use the subscription feature of [22]Freshmeat.
+     __________________________________________________________________
+
+
+    Lennart Poettering <mzshfrqni (at) 0pointer (dot) de>, April 2006
+
+   $Id$
+
+References
+
+   1. README#license
+   2. README#news
+   3. README#overview
+   4. README#status
+   5. README#documentation
+   6. README#requirements
+   7. README#installation
+   8. README#acks
+   9. README#download
+  10. http://0pointer.de/lennart/projects/fusedav/fusedav-0.2.tar.gz
+  11. http://0pointer.de/lennart/projects/fusedav/fusedav-0.1.tar.gz
+  12. http://www.webdav.org/
+  13. http://fuse.sourceforge.net/
+  14. http://www.webdav.org/neon/
+  15. http://www.webdav.org/neon/
+  16. http://fuse.sourceforge.net/
+  17. http://0pointer.de/lennart/projects/fusedav/
+  18. http://0pointer.de/lennart/projects/fusedav/fusedav-0.2.tar.gz
+  19. http://subversion.tigris.org/
+  20. svn://svn.0pointer.net/fusedav/
+  21. http://0pointer.net/cgi-bin/viewcvs.cgi/?root=fusedav
+  22. http://freshmeat.net/projects/fusedav/
