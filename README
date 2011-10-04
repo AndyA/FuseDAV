@@ -1,0 +1,57 @@
+Overview
+========
+
+fusedav is a Linux userspace file system driver for mounting WebDAV
+shares. It makes use of FUSE as userspace file system API and neon as
+WebDAV API.
+
+Current Status
+==============
+
+Version 0.2 works fine.
+
+Documentation
+=============
+
+After installation just run fusedav with two arguments: the WevDAV URL
+and the local mount point:
+
+  fusedav http://webdav.foo.bar/ /tmp/test
+
+You will be queried for a username and password if required. As long as
+the fusedav process is running, the file system is accessible under
+/tmp/test.
+
+Requirements
+============
+
+fusedav was developed and tested on Debian GNU/Linux "testing" from
+April 2006, it should work on most other Linux distributions since it
+uses GNU autoconf for source code configuration.
+
+fusedav requires the neon (0.26 minimum - 0.25 does not suffice!) and
+FUSE (2.5 minimum) development library files for compilation.
+
+Installation
+============
+
+As this package is made with the GNU autotools you should run
+./configure inside the distribution directory for configuring the source
+tree. After that you should run make for compilation and make install
+(as root) for installation of fusedav.
+
+Acknowledgements
+================
+
+Milos Szeredi for developing FUSE and some useful hints for its usage
+
+Sebastien Estienne for some packaging work
+
+Download
+========
+
+The newest release is always available from
+http://0pointer.de/lennart/projects/fusedav/
+
+The current release is 0.2
+
